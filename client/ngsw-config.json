@@ -6,13 +6,8 @@
       "name": "app",
       "installMode": "prefetch",
       "resources": {
-        "files": [
-          "/favicon.ico",
-          "/index.html",
-          "/manifest.webmanifest",
-          "/*.css",
-          "/*.js"
-        ]
+        "files": ["/favicon.ico", "/index.html", "/manifest.webmanifest", "/*.css", "/*.js"],
+        "urls": ["https://fonts.googleapis.com/icon?family=Material+Icons"]
       }
     },
     {
@@ -20,11 +15,16 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "resources": {
-        "files": [
-          "/assets/**",
-          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
-        ]
+        "files": ["/assets/**", "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"]
       }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "MEAN system",
+      "urls": ["/api/**"],
+      "cacheConfig": { "maxSize": 5, "maxAge": "3600" },
+      "version": "1.0.0"
     }
   ]
 }
