@@ -1,0 +1,46 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Login</span>
+      <div class="input-field">
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          [ngClass]="{ invalid: email.invalid && email.touched }"
+        />
+        <label for="email">Email:</label>
+        <span class="helper-text red-text" *ngIf="email.invalid && email.touched">
+          <span *ngIf="email.errors['required']">Email is required</span>
+          <span *ngIf="email.errors['email']">Enter an email</span>
+        </span>
+      </div>
+      <div class="input-field">
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          [ngClass]="{ invalid: password.invalid && password.touched }"
+        />
+        <label for="password">Password:</label>
+        <span class="helper-text red-text" *ngIf="password.invalid && password.touched">
+          <span *ngIf="password.errors['required']">Password is required</span>
+          <span *ngIf="password.errors['minlength']"
+            >Password must have at least
+            {{ password.errors['minlength']['requiredLength'] }} characters, now
+            {{ password.errors['minlength']['actualLength'] }}
+          </span>
+        </span>
+      </div>
+    </div>
+    <div class="card-action">
+      <button
+        [disabled]="form.invalid || form.disabled"
+        class="modal-action btn waves-effect"
+        type="submit"
+      >
+        Login
+      </button>
+    </div>
+  </div>
+</form>
