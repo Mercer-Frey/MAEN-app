@@ -22,7 +22,7 @@
   "dataGroups": [
     {
       "name": "MEAN system",
-      "urls": ["/api/**"],
+      "urls": ["/api/**", "/uploads/**"],
       "cacheConfig": { "maxSize": 5, "maxAge": "3600" },
       "version": "1.0.0"
     }
